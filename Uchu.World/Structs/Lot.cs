@@ -91,8 +91,7 @@ namespace Uchu.World
 
         public static readonly Lot ModularRocket = 6416;
 
-        public static readonly Lot Spawner = 176;
-
+        public const int Spawner = 176;
         public const int Imagination = 935;
         public const int TwoImagination = 4035;
         public const int ThreeImagination = 11910;
@@ -113,12 +112,20 @@ namespace Uchu.World
         public static readonly Lot RocketBuildCockpit = 6910;
         public static readonly Lot RocketBuildTail = 6915;
 
+        public const int BuildBorder = 9524;
+        public const int SpiderQueen = 14381;
+        public const int SpiderQueenEgg = 14375;
+        public const int SpiderQueenROFTarget = 14466;
+        public const int SpiderQueenRockSmashable = 16284;
+        public const int TornadoBgFx = 9938;
+        public const int PropertyPlagueVendor = 9628;
+        public const int SpiderQueenSpiderling = 16197;
+        
         public const int FactionTokenProxy = 13763;
         public const int AssemblyFactionToken = 8318;
         public const int SentinelFactionToken = 8319;
         public const int ParadoxFactionToken = 8320;
         public const int VentureFactionToken = 8321;
-
         public const int SentinelFactionVendor = 6631;
         public const int ParadoxFactionVendor = 6632;
         public const int AssemblyFactionVendor = 6633;
