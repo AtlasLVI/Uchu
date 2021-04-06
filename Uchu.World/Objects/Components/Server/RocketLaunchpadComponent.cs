@@ -25,7 +25,8 @@ namespace Uchu.World
             if (rocket == default)
             {
                 Logger.Error($"Could not find a valid rocket for {player}");
-                return;
+                return;  
+             }
 
             rocket.WorldState = ObjectWorldState.Attached;
             
