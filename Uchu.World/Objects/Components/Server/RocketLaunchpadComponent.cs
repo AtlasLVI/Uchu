@@ -26,7 +26,6 @@ namespace Uchu.World
             {
                 Logger.Error($"Could not find a valid rocket for {player}");
                 return;
-            }
 
             rocket.WorldState = ObjectWorldState.Attached;
             
@@ -37,6 +36,7 @@ namespace Uchu.World
                 Target = rocket,
                 Sender = player
             });
+
 
             if (!player.TryGetComponent<CharacterComponent>(out var characterComponent))
                 return;
