@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Uchu.Core;
@@ -43,9 +44,10 @@ namespace Uchu.World.Handlers.GameMessages
         }
 
         [PacketHandler]
-        public async Task SetLastCustomBuildHandler(SetLastCustomBuildMessage message, Player player)
+        public void SetLastCustomBuildHandler(SetLastCustomBuildMessage message, Player player)
         {
-            player.GetComponent<CharacterComponent>().Rocket = message.Tokens;
+            if (!player.TryGetComponent<CharacterComponent>(out var characterComponent));
+            characterComponent.Rocket = message.Tokens;
         }
 
         [PacketHandler]

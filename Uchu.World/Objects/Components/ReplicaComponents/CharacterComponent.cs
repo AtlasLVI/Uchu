@@ -586,14 +586,22 @@ namespace Uchu.World
             writer.Write((ulong) TotalFirstPlaceFinishes);
             writer.WriteBit(false);
 
-            writer.WriteBit(LandingByRocket);
-
-            if (LandingByRocket)
+            if (Rocket != default)
             {
-                var rocketString = Rocket;
-                
-                writer.Write((ushort) rocketString.Length);
-                writer.WriteString(rocketString, rocketString.Length, true);
+                // Send the rocket if it is set to land by rocket and rocket is defined.
+                writer.WriteBit(LandingByRocket);
+
+                if (LandingByRocket)
+                {
+                    var rocketString = Rocket;
+                    writer.Write((ushort) rocketString.Length);
+                    writer.WriteString(rocketString, rocketString.Length, true);
+                }
+            }
+            else
+            {
+                // Set the landing as not by rocket. Even if it is, this prevents a null reference exception.
+                writer.WriteBit(false);
             }
 
             WritePart4(writer);
